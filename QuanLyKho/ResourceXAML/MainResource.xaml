@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewmodel="clr-namespace:QuanLyKho.ViewModel"
+                    xmlns:local="clr-namespace:QuanLyKho.ResourceXAML">
+    <viewmodel:MainViewModel x:Key="MainMV"></viewmodel:MainViewModel>
+    <viewmodel:LoginViewModel x:Key="LoginMV"></viewmodel:LoginViewModel>
+    <viewmodel:ObjectViewModel x:Key="ObjectMV"></viewmodel:ObjectViewModel>
+    <viewmodel:ObjectEditViewModel x:Key="ObjectEditMV"></viewmodel:ObjectEditViewModel>
+    <viewmodel:AddViewModel x:Key="AddMV"></viewmodel:AddViewModel>
+    <viewmodel:ConfirmViewModel x:Key="ConfirmMV"></viewmodel:ConfirmViewModel>
+    <viewmodel:InputViewModel x:Key="InputMV"></viewmodel:InputViewModel>
+    <viewmodel:InputInfoViewModel x:Key="InputInfoMV"></viewmodel:InputInfoViewModel>
+    <viewmodel:InputEditViewModel x:Key="InputEditMV"></viewmodel:InputEditViewModel>
+    <viewmodel:SupplierViewModel x:Key="SupplierMV"></viewmodel:SupplierViewModel>
+    <viewmodel:SupplierEditViewModel x:Key="SupplierEditMV"></viewmodel:SupplierEditViewModel>
+    <viewmodel:OutputViewModel x:Key="OutputMV"></viewmodel:OutputViewModel>
+    <viewmodel:OutputInfoViewModel x:Key="OutputInfoMV"></viewmodel:OutputInfoViewModel>
+    <viewmodel:OutputEditViewModel x:Key="OutputEditMV"></viewmodel:OutputEditViewModel>
+    <viewmodel:CustomerViewModel x:Key="CustomerMV"></viewmodel:CustomerViewModel>
+    <viewmodel:CustomerEditViewModel x:Key="CustomerEditMV"></viewmodel:CustomerEditViewModel>
+    <viewmodel:UserViewModel x:Key="UserMV"></viewmodel:UserViewModel>
+    <viewmodel:UserEditViewModel x:Key="UserEditMV"></viewmodel:UserEditViewModel>
+    <viewmodel:ProgressBarViewModel x:Key="ProgressBarMV"></viewmodel:ProgressBarViewModel>
+    <!--<viewmodel:UnitViewModel x:Key="UnitMV"></viewmodel:UnitViewModel>
+    <viewmodel:CategoryViewModel x:Key="CategoryMV"></viewmodel:CategoryViewModel>
+    
+    
+  
+    -->
+    
+
+</ResourceDictionary>

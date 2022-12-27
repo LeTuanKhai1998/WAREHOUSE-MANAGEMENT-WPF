@@ -1,0 +1,80 @@
+﻿<Window x:Class="QuanLyKho.View.ExportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyKho.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="Transparent"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Name="exportView"
+        Height="200" Width="auto">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding MouseMoveWindowCommand}" 
+                                          CommandParameter="{Binding ElementName=exportView}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="1" />
+        </Grid.Effect>
+        <materialDesign:Card Margin="5" Background="White" BorderBrush="Black" BorderThickness="0.5" Padding="20 10 20  5" UniformCornerRadius="8"  HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0"  HorizontalAlignment="Stretch" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="143*"/>
+                        <ColumnDefinition Width="106*"/>
+                        <ColumnDefinition Width="auto"/>
+
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="0 10 0 0" Grid.Column="0" FontSize="18" FontWeight="Bold" Text="{Binding Title}" ></TextBlock>
+                    <Button VerticalAlignment="Top" CommandParameter="{Binding ElementName=exportView}" Command="{Binding CloseCommand}" Grid.Column="2" HorizontalAlignment="Right" Width="22" Height="22" Background="Transparent" Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" ToolTip="Thoát" Margin="0,0,0.2,0">
+                        <TextBlock Margin="0 2 0 0 " Foreground="DarkViolet" FontWeight="Bold">X</TextBlock>
+                    </Button>
+                </Grid>
+                <StackPanel Margin="0 20 0 0" Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock FontSize="16" FontWeight="Medium" VerticalAlignment="Center" >Đường dẫn:</TextBlock>
+                    <Border Margin="10 0 0 0" Width="300" BorderThickness="0.5" CornerRadius="3.2" BorderBrush="Gray" >
+                        <!--<TextBox Text="{Binding OutputFileName, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" x:FieldModifier="private" x:Name="outputTextBox"/>-->
+                        <TextBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Padding="10 0 0 0" Text="{Binding path,UpdateSourceTrigger=PropertyChanged}"/>
+                    </Border>
+                    <Button Background="LightCyan" BorderBrush="Black" Foreground="Black" Margin="10 0 0 0" Content="..." Command="{Binding ShowSaveFileDialog}"/>
+                </StackPanel>
+                <CheckBox FontWeight="Medium"  IsChecked="{Binding IsChecked,UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Margin="0 10 0 0 " HorizontalAlignment="Right">Mở file đã tạo trong MS Excel</CheckBox>
+                <WrapPanel VerticalAlignment="Bottom" Margin="0 20 0 0" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button IsDefault="True" CommandParameter="{Binding ElementName=exportView}" BorderThickness="0" Background="#00b3b3" Command="{Binding ExportCommand}"   Margin="5" Width="110" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Kind="FileExport"></materialDesign:PackIcon>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0 ">Xuất file</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button CommandParameter="{Binding ElementName=exportView}" Command="{Binding CloseCommand}"  BorderThickness="0" Background="Gray"     Margin="5" Width="110" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="HighlightOff" />
+                            <TextBlock Text=" Bỏ qua"/>
+                        </StackPanel>
+                    </Button>
+                </WrapPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>
