@@ -12,6 +12,8 @@ Giới thiệu về phần mềm:
  +Quản lý thống kê
 Hướng dẫn cài đặt
 Bạn cần ở app SQL Server Management Studio và chạy file database.sql đầu tiên để tạo database, tables, proc...
+
+
 Note: Một số file cần chú ý:
  - ConnectionString.cs (nơi define connectionString to database)
  - Constants.cs (chứa path images)
